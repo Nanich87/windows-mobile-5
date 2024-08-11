@@ -1,1 +1,1 @@
-# windows-mobile-5
+# Windows Mobile 5.0
