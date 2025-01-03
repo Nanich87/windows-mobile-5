@@ -117,6 +117,34 @@
             }
         }
 
+
+        private void ButtonSend_Click(object sender, EventArgs e)
+        {
+            var input = textBoxInput.Text;
+            if (string.IsNullOrEmpty(input))
+            {
+                return;
+            }
+
+            if (serialPort.IsOpen)
+            {
+                try
+                {
+                    serialPort.WriteLine(input);
+                    textBoxDataReceived.Text = textBoxDataReceived.Text + Environment.NewLine + input;
+                }
+                catch (InvalidCastException ex)
+                {
+                    MessageBox.Show(
+                       ex.Message,
+                       "Error",
+                       MessageBoxButtons.OK,
+                       MessageBoxIcon.Exclamation,
+                       MessageBoxDefaultButton.Button1);
+                }
+            }
+        }
+
         private void MenuItemStart_Click(object sender, EventArgs e)
         {
             OpenPort();

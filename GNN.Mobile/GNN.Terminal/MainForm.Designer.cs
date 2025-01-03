@@ -78,6 +78,7 @@
             this.buttonSend.Size = new System.Drawing.Size(72, 20);
             this.buttonSend.TabIndex = 2;
             this.buttonSend.Text = "Send";
+            this.buttonSend.Click += new System.EventHandler(this.ButtonSend_Click);
             // 
             // labelDataReceived
             // 
