@@ -35,6 +35,8 @@
             this.comboBoxPort = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.comboBoxBaudRate = new System.Windows.Forms.ComboBox();
+            this.checkBoxSaveToFile = new System.Windows.Forms.CheckBox();
+            this.buttonSelectSaveFolder = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // mainMenu1
@@ -85,12 +87,32 @@
             this.comboBoxBaudRate.Size = new System.Drawing.Size(145, 22);
             this.comboBoxBaudRate.TabIndex = 3;
             // 
+            // checkBoxSaveToFile
+            // 
+            this.checkBoxSaveToFile.Location = new System.Drawing.Point(3, 59);
+            this.checkBoxSaveToFile.Name = "checkBoxSaveToFile";
+            this.checkBoxSaveToFile.Size = new System.Drawing.Size(128, 20);
+            this.checkBoxSaveToFile.TabIndex = 6;
+            this.checkBoxSaveToFile.Text = "Save To File";
+            this.checkBoxSaveToFile.CheckStateChanged += new System.EventHandler(this.CheckBoxSaveToFile_CheckStateChanged);
+            // 
+            // buttonSelectSaveFolder
+            // 
+            this.buttonSelectSaveFolder.Location = new System.Drawing.Point(137, 59);
+            this.buttonSelectSaveFolder.Name = "buttonSelectSaveFolder";
+            this.buttonSelectSaveFolder.Size = new System.Drawing.Size(100, 20);
+            this.buttonSelectSaveFolder.TabIndex = 9;
+            this.buttonSelectSaveFolder.Text = "Save Folder";
+            this.buttonSelectSaveFolder.Click += new System.EventHandler(this.ButtonSelectSaveFolder_Click);
+            // 
             // DeviceForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(240, 268);
+            this.Controls.Add(this.buttonSelectSaveFolder);
+            this.Controls.Add(this.checkBoxSaveToFile);
             this.Controls.Add(this.comboBoxBaudRate);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.comboBoxPort);
@@ -109,5 +131,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox comboBoxBaudRate;
         private System.Windows.Forms.MenuItem menuItemStart;
+        private System.Windows.Forms.CheckBox checkBoxSaveToFile;
+        private System.Windows.Forms.Button buttonSelectSaveFolder;
     }
 }

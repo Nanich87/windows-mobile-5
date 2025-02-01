@@ -15,6 +15,12 @@
     {
         private SerialPort serialPort;
 
+        private bool saveToFile;
+
+        private string filePath;
+
+        private FileStream output;
+
         public MainForm()
         {
             InitializeComponent();
@@ -31,6 +37,11 @@
             if (serialPort.IsOpen)
             {
                 return;
+            }
+
+            if (saveToFile && Directory.Exists(filePath))
+            {
+                output = File.Open(filePath, FileMode.Append, FileAccess.Write);
             }
 
             try
@@ -78,8 +89,66 @@
             }
         }
 
+        private void WriteToFile(string data)
+        {
+            try
+            {
+                if (output != null)
+                {
+                    var buffer = Encoding.Default.GetBytes(data);
+                    output.Write(buffer, 0, buffer.Length);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(
+                   ex.Message,
+                   "Error",
+                   MessageBoxButtons.OK,
+                   MessageBoxIcon.Exclamation,
+                   MessageBoxDefaultButton.Button1);
+            }
+            finally
+            {
+                CloseStream();
+            }
+        }
+
+        private void CloseStream()
+        {
+            if (output != null)
+            {
+                output.Close();
+                output.Dispose();
+                output = null;
+            }
+        }
+
+        private string ReadExistingData()
+        {
+            string data = null;
+
+            try
+            {
+                data = serialPort.ReadExisting();
+            }
+            catch (InvalidOperationException)
+            {
+            }
+
+            return data;
+        }
+
         void SerialPort_DataReceived(object sender, SerialDataReceivedEventArgs e)
         {
+            var data = ReadExistingData();
+            if (string.IsNullOrEmpty(data))
+            {
+                return;
+            }
+
+            WriteToFile(data);
+
             textBoxDataReceived.BeginInvoke((Action)(() =>
             {
                 if (!string.IsNullOrEmpty(textBoxDataReceived.Text) && textBoxDataReceived.Text.Length > 1000)
@@ -87,13 +156,7 @@
                     textBoxDataReceived.Text = string.Empty;
                 }
 
-                try
-                {
-                    textBoxDataReceived.Text = serialPort.ReadExisting() + textBoxDataReceived.Text;
-                }
-                catch (InvalidOperationException)
-                {
-                }
+                textBoxDataReceived.Text = data + textBoxDataReceived.Text;
             }));
         }
 
@@ -104,14 +167,21 @@
                 return;
             }
 
-            var form = new DeviceForm();
-            if (form.ShowDialog() == DialogResult.Yes)
+            var deviceForm = new DeviceForm();
+            if (deviceForm.ShowDialog() == DialogResult.Yes)
             {
-                serialPort.PortName = form.PortName;
-                serialPort.BaudRate = form.BaudRate;
+                serialPort.PortName = deviceForm.PortName;
+                serialPort.BaudRate = deviceForm.BaudRate;
                 serialPort.Parity = Parity.None;
                 serialPort.DataBits = 8;
                 serialPort.StopBits = StopBits.One;
+
+                if (deviceForm.SaveToFile && Directory.Exists(deviceForm.FilePath))
+                {
+                    saveToFile = deviceForm.SaveToFile;
+                    filePath = deviceForm.FilePath;
+                    output = File.Open(filePath, FileMode.Append, FileAccess.Write);
+                }
 
                 OpenPort();
             }

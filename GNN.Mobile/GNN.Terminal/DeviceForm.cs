@@ -30,12 +30,30 @@
 
         public int BaudRate { get; private set; }
 
+        public bool SaveToFile { get; private set; }
+
+        public string FilePath { get; private set; }
+
         private void MenuItemStart_Click(object sender, EventArgs e)
         {
             PortName = comboBoxPort.SelectedItem.ToString();
             BaudRate = int.Parse(comboBoxBaudRate.SelectedItem.ToString());
 
             DialogResult = DialogResult.Yes;
+        }
+
+        private void CheckBoxSaveToFile_CheckStateChanged(object sender, EventArgs e)
+        {
+            SaveToFile = checkBoxSaveToFile.Checked;
+        }
+
+        private void ButtonSelectSaveFolder_Click(object sender, EventArgs e)
+        {
+            var saveFileDialog = new SaveFileDialog();
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                FilePath = saveFileDialog.FileName;
+            }
         }
     }
 }
