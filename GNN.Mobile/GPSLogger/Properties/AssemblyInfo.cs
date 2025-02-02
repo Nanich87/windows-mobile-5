@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("GNN.Terminal")]
+[assembly: AssemblyTitle("GNN.GPSLogger")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("GNN.Terminal")]
+[assembly: AssemblyProduct("GNN.GPSLogger")]
 [assembly: AssemblyCopyright("Copyright © 2025")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("4e39beb9-814b-4959-b43d-35faf8334985")]
+[assembly: Guid("b09f0942-45dd-47ff-af47-e0ae5226b663")]
 
 // Version information for an assembly consists of the following four values:
 //
