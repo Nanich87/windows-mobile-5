@@ -107,9 +107,7 @@
                    MessageBoxButtons.OK,
                    MessageBoxIcon.Exclamation,
                    MessageBoxDefaultButton.Button1);
-            }
-            finally
-            {
+
                 CloseStream();
             }
         }
@@ -176,7 +174,8 @@
                 serialPort.DataBits = 8;
                 serialPort.StopBits = StopBits.One;
 
-                if (deviceForm.SaveToFile && Directory.Exists(deviceForm.FilePath))
+                var parentDirectory = Path.GetDirectoryName(deviceForm.FilePath);
+                if (deviceForm.SaveToFile && Directory.Exists(parentDirectory))
                 {
                     saveToFile = deviceForm.SaveToFile;
                     filePath = deviceForm.FilePath;
