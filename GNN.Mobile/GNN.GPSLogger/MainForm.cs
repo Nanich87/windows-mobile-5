@@ -101,7 +101,7 @@
 
             labelSpeed.BeginInvoke((Action)(() =>
             {
-                labelSpeed.Text = string.Format("{0:000.0}", NMEAParser.Instance.GetSpeed());
+                labelSpeed.Text = string.Format("{0:0.0}", NMEAParser.Instance.GetSpeed());
             }));
         }
 
