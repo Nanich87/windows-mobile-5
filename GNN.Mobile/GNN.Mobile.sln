@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GNN.Terminal", "GNN.Termina
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GNN.GPSLogger", "GNN.GPSLogger\GNN.GPSLogger.csproj", "{2F70FA75-A434-41FB-B0C8-8C8B919A5105}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GNN.NMEAParser", "GNN.NMEAParser\GNN.NMEAParser.csproj", "{63B5515A-815D-460D-B6B3-DC352EA14F98}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,6 +31,10 @@ Global
 		{2F70FA75-A434-41FB-B0C8-8C8B919A5105}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2F70FA75-A434-41FB-B0C8-8C8B919A5105}.Release|Any CPU.Build.0 = Release|Any CPU
 		{2F70FA75-A434-41FB-B0C8-8C8B919A5105}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{63B5515A-815D-460D-B6B3-DC352EA14F98}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{63B5515A-815D-460D-B6B3-DC352EA14F98}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{63B5515A-815D-460D-B6B3-DC352EA14F98}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{63B5515A-815D-460D-B6B3-DC352EA14F98}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

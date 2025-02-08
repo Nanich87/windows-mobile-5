@@ -10,6 +10,7 @@
     using System.IO.Ports;
     using System.Text;
     using System.Windows.Forms;
+    using GNN.NMEAParser;
 
     public partial class MainForm : Form
     {
@@ -95,12 +96,28 @@
 
         void SerialPort_DataReceived(object sender, SerialDataReceivedEventArgs e)
         {
-            var speed = 0.5;
+            var data = ReadExistingData();
+            NMEAParser.Instance.Parse(data);
 
             labelSpeed.BeginInvoke((Action)(() =>
             {
-                labelSpeed.Text = string.Format("{0:000.0}", speed);
+                labelSpeed.Text = string.Format("{0:000.0}", NMEAParser.Instance.GetSpeed());
             }));
+        }
+
+        private string ReadExistingData()
+        {
+            string data = null;
+
+            try
+            {
+                data = serialPort.ReadExisting();
+            }
+            catch (InvalidOperationException)
+            {
+            }
+
+            return data;
         }
     }
 }
