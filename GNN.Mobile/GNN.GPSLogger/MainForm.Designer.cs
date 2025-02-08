@@ -33,6 +33,7 @@
             this.menuItemStart = new System.Windows.Forms.MenuItem();
             this.menuItemStop = new System.Windows.Forms.MenuItem();
             this.labelSpeed = new System.Windows.Forms.Label();
+            this.labelSpeedometer = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // mainMenu1
@@ -55,11 +56,21 @@
             this.labelSpeed.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.labelSpeed.Font = new System.Drawing.Font("Tahoma", 48F, System.Drawing.FontStyle.Regular);
-            this.labelSpeed.Location = new System.Drawing.Point(3, 0);
+            this.labelSpeed.Location = new System.Drawing.Point(3, 24);
             this.labelSpeed.Name = "labelSpeed";
-            this.labelSpeed.Size = new System.Drawing.Size(234, 100);
+            this.labelSpeed.Size = new System.Drawing.Size(234, 80);
             this.labelSpeed.Text = "000.0";
             this.labelSpeed.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // labelSpeedometer
+            // 
+            this.labelSpeedometer.Dock = System.Windows.Forms.DockStyle.Top;
+            this.labelSpeedometer.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular);
+            this.labelSpeedometer.Location = new System.Drawing.Point(0, 0);
+            this.labelSpeedometer.Name = "labelSpeedometer";
+            this.labelSpeedometer.Size = new System.Drawing.Size(240, 20);
+            this.labelSpeedometer.Text = "Speedometer";
+            this.labelSpeedometer.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // MainForm
             // 
@@ -67,6 +78,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(240, 268);
+            this.Controls.Add(this.labelSpeedometer);
             this.Controls.Add(this.labelSpeed);
             this.Menu = this.mainMenu1;
             this.Name = "MainForm";
@@ -80,6 +92,7 @@
         private System.Windows.Forms.MenuItem menuItemStart;
         private System.Windows.Forms.MenuItem menuItemStop;
         private System.Windows.Forms.Label labelSpeed;
+        private System.Windows.Forms.Label labelSpeedometer;
     }
 }
 
