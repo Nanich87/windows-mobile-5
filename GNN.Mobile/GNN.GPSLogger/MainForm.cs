@@ -21,8 +21,8 @@
             InitializeComponent();
 
             serialPort = new SerialPort();
-            serialPort.PortName = "COM1";
-            serialPort.BaudRate = 9600;
+            serialPort.PortName = "COM2";
+            serialPort.BaudRate = 57600;
             serialPort.Parity = Parity.None;
             serialPort.DataBits = 8;
             serialPort.StopBits = StopBits.One;

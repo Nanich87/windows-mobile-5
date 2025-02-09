@@ -545,7 +545,7 @@
         {
             "{605BE39E-5046-48BD-AEC0-63C3A46626D5}:_9EDEAD42325A4AEA998DC3CF966E8F2B"
             {
-            "SourcePath" = "8:..\\GNN.GPSLogger\\obj\\Debug\\GNN.GPSLogger.exe"
+            "SourcePath" = "8:..\\GNN.GPSLogger\\obj\\Release\\GNN.GPSLogger.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_3530FADA5D014221963C7A117E5F07B4"
@@ -605,6 +605,16 @@
         }
         "Shortcut"
         {
+            "{971D45E9-E38C-49AC-B36E-4C5BEA533350}:_120E040EB74A4481925321025BFA3727"
+            {
+            "Name" = "8:GNN.GPSLogger"
+            "Arguments" = "8:"
+            "Description" = "8:"
+            "ShowCmd" = "3:1"
+            "Target" = "8:_9EDEAD42325A4AEA998DC3CF966E8F2B"
+            "Folder" = "8:_10D9830B1B984B4D8A979E4F7856361E"
+            "WorkingFolder" = "8:_3530FADA5D014221963C7A117E5F07B4"
+            }
         }
     }
 }
