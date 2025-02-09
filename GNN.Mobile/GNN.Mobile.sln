@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GNN.GPSLogger", "GNN.GPSLog
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GNN.NMEAParser", "GNN.NMEAParser\GNN.NMEAParser.csproj", "{63B5515A-815D-460D-B6B3-DC352EA14F98}"
 EndProject
+Project("{B900F1C2-3D47-4FEC-85B3-04AAF18C3634}") = "GNN.GPSLogger.Setup", "GNN.GPSLogger.Setup\GNN.GPSLogger.Setup.vddproj", "{D776413A-D052-4B48-A47B-49392AA9CECF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -35,6 +37,8 @@ Global
 		{63B5515A-815D-460D-B6B3-DC352EA14F98}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{63B5515A-815D-460D-B6B3-DC352EA14F98}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{63B5515A-815D-460D-B6B3-DC352EA14F98}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D776413A-D052-4B48-A47B-49392AA9CECF}.Debug|Any CPU.ActiveCfg = Debug
+		{D776413A-D052-4B48-A47B-49392AA9CECF}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
