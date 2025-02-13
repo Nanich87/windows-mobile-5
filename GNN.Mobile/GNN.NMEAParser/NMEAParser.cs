@@ -5,10 +5,14 @@
     using System.Linq;
     using System.Collections.Generic;
     using System.Text;
+    using GNN.NMEAParser.Factories;
+    using GNN.NMEAParser.Contracts;
 
     public sealed class NMEAParser
     {
         private static NMEAParser instance;
+
+        private MessageFactory factory;
 
         private string message = string.Empty;
 
@@ -16,6 +20,7 @@
 
         private NMEAParser()
         {
+            factory = new MessageFactory();
         }
 
         public static NMEAParser Instance
@@ -62,36 +67,13 @@
             return speed;
         }
 
-        private void ProcessMessage(string message)
+        private void ProcessMessage(string line)
         {
-            if (message.Length < 6 || message[0] != '$')
-            {
-                return;
-            }
+            var message = factory.CreateMessage(line);
 
-            var messageType = message.Substring(3, 3);
-            switch (messageType)
+            if (message is ISpeedMessage)
             {
-                case "VTG":
-                    {
-                        ParseVTG(message);
-                        break;
-                    }
-            }
-        }
-
-        private void ParseVTG(string message)
-        {
-            var fields = message.Split(',');
-            if (fields.Length == 10)
-            {
-                try
-                {
-                    speed = double.Parse(fields[7], NumberStyles.AllowDecimalPoint, CultureInfo.InvariantCulture);
-                }
-                catch (Exception)
-                {
-                }
+                speed = ((ISpeedMessage)message).Speed;
             }
         }
     }
