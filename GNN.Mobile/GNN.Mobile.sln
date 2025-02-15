@@ -11,7 +11,18 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GNN.NMEAParser", "GNN.NMEAP
 EndProject
 Project("{B900F1C2-3D47-4FEC-85B3-04AAF18C3634}") = "GNN.GPSLogger.Setup", "GNN.GPSLogger.Setup\GNN.GPSLogger.Setup.vddproj", "{D776413A-D052-4B48-A47B-49392AA9CECF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GNN.NMEAParser.Tests", "GNN.NMEAParser.Tests\GNN.NMEAParser.Tests.csproj", "{5580E35F-8F0D-4F4B-A083-56C8BDC47E5F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{6C4AA9A3-3C43-4F76-8172-3B409CBAD136}"
+	ProjectSection(SolutionItems) = preProject
+		GNN.Mobile.vsmdi = GNN.Mobile.vsmdi
+		LocalTestRun.testrunconfig = LocalTestRun.testrunconfig
+	EndProjectSection
+EndProject
 Global
+	GlobalSection(TestCaseManagementSettings) = postSolution
+		CategoryFile = GNN.Mobile.vsmdi
+	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
@@ -39,6 +50,10 @@ Global
 		{63B5515A-815D-460D-B6B3-DC352EA14F98}.Release|Any CPU.Build.0 = Release|Any CPU
 		{D776413A-D052-4B48-A47B-49392AA9CECF}.Debug|Any CPU.ActiveCfg = Debug
 		{D776413A-D052-4B48-A47B-49392AA9CECF}.Release|Any CPU.ActiveCfg = Release
+		{5580E35F-8F0D-4F4B-A083-56C8BDC47E5F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5580E35F-8F0D-4F4B-A083-56C8BDC47E5F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5580E35F-8F0D-4F4B-A083-56C8BDC47E5F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5580E35F-8F0D-4F4B-A083-56C8BDC47E5F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

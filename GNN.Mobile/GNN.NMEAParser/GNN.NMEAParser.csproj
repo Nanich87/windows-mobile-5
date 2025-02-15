@@ -54,6 +54,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Contracts\ILocationMessage.cs" />
     <Compile Include="Contracts\IMessage.cs" />
     <Compile Include="Contracts\ISpeedMessage.cs" />
     <Compile Include="Factories\MessageFactory.cs" />
