@@ -74,9 +74,9 @@
                 longitude = ParseCoordinate(fields[LongitudeIndex], 3);
             }
 
-            if (SpeedIndex < fields.Length)
+            if (SpeedIndex < fields.Length && !string.IsNullOrEmpty(fields[SpeedIndex]))
             {
-                var knots = double.Parse(fields[7], NumberStyles.AllowDecimalPoint, CultureInfo.InvariantCulture);
+                var knots = double.Parse(fields[SpeedIndex], NumberStyles.AllowDecimalPoint, CultureInfo.InvariantCulture);
                 speed = knots * 1.852;
             }
 

@@ -32,7 +32,7 @@
             menuItemStop.Enabled = false;
         }
 
-        private void menuItemStart_Click(object sender, EventArgs e)
+        private void MenuItemStart_Click(object sender, EventArgs e)
         {
             if (serialPort.IsOpen)
             {
@@ -63,7 +63,7 @@
             }
         }
 
-        private void menuItemStop_Click(object sender, EventArgs e)
+        private void MenuItemStop_Click(object sender, EventArgs e)
         {
             if (!serialPort.IsOpen)
             {
@@ -94,10 +94,44 @@
             }
         }
 
+        private void MenuItemExit_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (serialPort.IsOpen)
+                {
+                    serialPort.Close();
+                }
+            }
+            catch (InvalidOperationException ex)
+            {
+                MessageBox.Show(
+                   ex.Message,
+                   "Error",
+                   MessageBoxButtons.OK,
+                   MessageBoxIcon.Exclamation,
+                   MessageBoxDefaultButton.Button1);
+            }
+            finally
+            {
+                Application.Exit();
+            }
+        }
+
         void SerialPort_DataReceived(object sender, SerialDataReceivedEventArgs e)
         {
             var data = ReadExistingData();
             NMEAParser.Instance.Parse(data);
+
+            labelLatitude.BeginInvoke((Action)(() =>
+            {
+                labelLatitude.Text = string.Format("{0:0.00000000}", NMEAParser.Instance.GetLatitude());
+            }));
+
+            labelLongitude.BeginInvoke((Action)(() =>
+            {
+                labelLongitude.Text = string.Format("{0:0.00000000}", NMEAParser.Instance.GetLongitude());
+            }));
 
             labelSpeed.BeginInvoke((Action)(() =>
             {

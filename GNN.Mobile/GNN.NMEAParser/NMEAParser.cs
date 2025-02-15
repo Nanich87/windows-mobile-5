@@ -16,6 +16,8 @@
 
         private string message = string.Empty;
 
+        private double latitude;
+        private double longitude;
         private double speed;
 
         private NMEAParser()
@@ -62,6 +64,16 @@
             }
         }
 
+        public double GetLatitude()
+        {
+            return latitude;
+        }
+
+        public double GetLongitude()
+        {
+            return longitude;
+        }
+
         public double GetSpeed()
         {
             return speed;
@@ -74,6 +86,12 @@
             if (message is ISpeedMessage)
             {
                 speed = ((ISpeedMessage)message).Speed;
+            }
+
+            if (message is ILocationMessage)
+            {
+                latitude = ((ILocationMessage)message).Latitude;
+                longitude = ((ILocationMessage)message).Longitude;
             }
         }
     }

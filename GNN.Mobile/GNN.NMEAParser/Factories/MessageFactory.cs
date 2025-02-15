@@ -22,12 +22,12 @@
             {
                 case VTG.Name:
                     {
-                        return VTG.Create(type);
+                        return VTG.Create(line);
                     }
 
                 case RMC.Name:
                     {
-                        return RMC.Create(type);
+                        return RMC.Create(line);
                     }
 
                 default:

@@ -34,22 +34,28 @@
             this.menuItemStop = new System.Windows.Forms.MenuItem();
             this.labelSpeed = new System.Windows.Forms.Label();
             this.labelSpeedometer = new System.Windows.Forms.Label();
+            this.labelLatitude = new System.Windows.Forms.Label();
+            this.labelLongitude = new System.Windows.Forms.Label();
+            this.labelN = new System.Windows.Forms.Label();
+            this.labelE = new System.Windows.Forms.Label();
+            this.menuItemExit = new System.Windows.Forms.MenuItem();
             this.SuspendLayout();
             // 
             // mainMenu1
             // 
             this.mainMenu1.MenuItems.Add(this.menuItemStart);
             this.mainMenu1.MenuItems.Add(this.menuItemStop);
+            this.mainMenu1.MenuItems.Add(this.menuItemExit);
             // 
             // menuItemStart
             // 
             this.menuItemStart.Text = "Start";
-            this.menuItemStart.Click += new System.EventHandler(this.menuItemStart_Click);
+            this.menuItemStart.Click += new System.EventHandler(this.MenuItemStart_Click);
             // 
             // menuItemStop
             // 
             this.menuItemStop.Text = "Stop";
-            this.menuItemStop.Click += new System.EventHandler(this.menuItemStop_Click);
+            this.menuItemStop.Click += new System.EventHandler(this.MenuItemStop_Click);
             // 
             // labelSpeed
             // 
@@ -72,12 +78,55 @@
             this.labelSpeedometer.Text = "Speedometer";
             this.labelSpeedometer.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
+            // labelLatitude
+            // 
+            this.labelLatitude.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular);
+            this.labelLatitude.Location = new System.Drawing.Point(103, 104);
+            this.labelLatitude.Name = "labelLatitude";
+            this.labelLatitude.Size = new System.Drawing.Size(125, 20);
+            this.labelLatitude.Text = "00.00000000";
+            this.labelLatitude.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // labelLongitude
+            // 
+            this.labelLongitude.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular);
+            this.labelLongitude.Location = new System.Drawing.Point(103, 124);
+            this.labelLongitude.Name = "labelLongitude";
+            this.labelLongitude.Size = new System.Drawing.Size(125, 20);
+            this.labelLongitude.Text = "000.00000000";
+            this.labelLongitude.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // labelN
+            // 
+            this.labelN.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
+            this.labelN.Location = new System.Drawing.Point(57, 104);
+            this.labelN.Name = "labelN";
+            this.labelN.Size = new System.Drawing.Size(40, 20);
+            this.labelN.Text = "N:";
+            // 
+            // labelE
+            // 
+            this.labelE.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
+            this.labelE.Location = new System.Drawing.Point(57, 124);
+            this.labelE.Name = "labelE";
+            this.labelE.Size = new System.Drawing.Size(40, 20);
+            this.labelE.Text = "E:";
+            // 
+            // menuItemExit
+            // 
+            this.menuItemExit.Text = "Exit";
+            this.menuItemExit.Click += new System.EventHandler(this.MenuItemExit_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(240, 268);
+            this.Controls.Add(this.labelE);
+            this.Controls.Add(this.labelN);
+            this.Controls.Add(this.labelLongitude);
+            this.Controls.Add(this.labelLatitude);
             this.Controls.Add(this.labelSpeedometer);
             this.Controls.Add(this.labelSpeed);
             this.Menu = this.mainMenu1;
@@ -93,6 +142,11 @@
         private System.Windows.Forms.MenuItem menuItemStop;
         private System.Windows.Forms.Label labelSpeed;
         private System.Windows.Forms.Label labelSpeedometer;
+        private System.Windows.Forms.Label labelLatitude;
+        private System.Windows.Forms.Label labelLongitude;
+        private System.Windows.Forms.Label labelN;
+        private System.Windows.Forms.Label labelE;
+        private System.Windows.Forms.MenuItem menuItemExit;
     }
 }
 

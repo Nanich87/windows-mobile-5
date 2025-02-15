@@ -4,6 +4,7 @@
     using System.Text;
     using System.Collections.Generic;
     using System.Linq;
+    using GNN.NMEAParser.Factories;
     using GNN.NMEAParser.Messages;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -13,11 +14,15 @@
     [TestClass]
     public class NMEATests
     {
+        private MessageFactory factory;
+
         public NMEATests()
         {
             //
             // TODO: Add constructor logic here
             //
+
+            factory = new MessageFactory();
         }
 
         private TestContext testContextInstance;
@@ -59,6 +64,15 @@
         // public void MyTestCleanup() { }
         //
         #endregion
+
+        [TestMethod]
+        public void TestParseRMC()
+        {
+            var message = "$GPRMC,203522.00,A,5109.0262308,N,11401.8407342,W,0.004,133.4,130522,0.0,E,D*2B";
+            var rmc = factory.CreateMessage(message);
+
+            Assert.IsNotNull(rmc);
+        }
 
         [TestMethod]
         public void TestParseLatitude()
