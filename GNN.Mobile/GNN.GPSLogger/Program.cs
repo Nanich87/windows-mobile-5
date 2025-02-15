@@ -1,10 +1,10 @@
-﻿using System;
-using System.Linq;
-using System.Collections.Generic;
-using System.Windows.Forms;
-
-namespace GNN.GPSLogger
+﻿namespace GNN.GPSLogger
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Windows.Forms;
+
     static class Program
     {
         /// <summary>

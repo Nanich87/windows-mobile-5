@@ -1,12 +1,12 @@
 ﻿namespace GNN.NMEAParser
 {
     using System;
+    using System.Collections.Generic;
     using System.Globalization;
     using System.Linq;
-    using System.Collections.Generic;
     using System.Text;
-    using GNN.NMEAParser.Factories;
     using GNN.NMEAParser.Contracts;
+    using GNN.NMEAParser.Factories;
 
     public sealed class NMEAParser
     {
