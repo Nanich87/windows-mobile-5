@@ -6,9 +6,9 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("GNN.GPSLogger")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("GPS Logger")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("GNNMobile")]
 [assembly: AssemblyProduct("GNN.GPSLogger")]
 [assembly: AssemblyCopyright("Copyright © 2025")]
 [assembly: AssemblyTrademark("")]

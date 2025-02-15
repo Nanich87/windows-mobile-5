@@ -32,13 +32,14 @@
             this.mainMenu1 = new System.Windows.Forms.MainMenu();
             this.menuItemStart = new System.Windows.Forms.MenuItem();
             this.menuItemStop = new System.Windows.Forms.MenuItem();
+            this.menuItemExit = new System.Windows.Forms.MenuItem();
             this.labelSpeed = new System.Windows.Forms.Label();
             this.labelSpeedometer = new System.Windows.Forms.Label();
             this.labelLatitude = new System.Windows.Forms.Label();
             this.labelLongitude = new System.Windows.Forms.Label();
             this.labelN = new System.Windows.Forms.Label();
             this.labelE = new System.Windows.Forms.Label();
-            this.menuItemExit = new System.Windows.Forms.MenuItem();
+            this.labelDateTime = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // mainMenu1
@@ -56,6 +57,11 @@
             // 
             this.menuItemStop.Text = "Stop";
             this.menuItemStop.Click += new System.EventHandler(this.MenuItemStop_Click);
+            // 
+            // menuItemExit
+            // 
+            this.menuItemExit.Text = "Exit";
+            this.menuItemExit.Click += new System.EventHandler(this.MenuItemExit_Click);
             // 
             // labelSpeed
             // 
@@ -112,10 +118,14 @@
             this.labelE.Size = new System.Drawing.Size(40, 20);
             this.labelE.Text = "E:";
             // 
-            // menuItemExit
+            // labelDateTime
             // 
-            this.menuItemExit.Text = "Exit";
-            this.menuItemExit.Click += new System.EventHandler(this.MenuItemExit_Click);
+            this.labelDateTime.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular);
+            this.labelDateTime.Location = new System.Drawing.Point(3, 248);
+            this.labelDateTime.Name = "labelDateTime";
+            this.labelDateTime.Size = new System.Drawing.Size(234, 20);
+            this.labelDateTime.Text = "---";
+            this.labelDateTime.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // MainForm
             // 
@@ -123,6 +133,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(240, 268);
+            this.Controls.Add(this.labelDateTime);
             this.Controls.Add(this.labelE);
             this.Controls.Add(this.labelN);
             this.Controls.Add(this.labelLongitude);
@@ -147,6 +158,7 @@
         private System.Windows.Forms.Label labelN;
         private System.Windows.Forms.Label labelE;
         private System.Windows.Forms.MenuItem menuItemExit;
+        private System.Windows.Forms.Label labelDateTime;
     }
 }
 

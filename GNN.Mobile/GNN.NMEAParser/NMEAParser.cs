@@ -16,6 +16,7 @@
 
         private string message = string.Empty;
 
+        private DateTime dateTime;
         private double latitude;
         private double longitude;
         private double speed;
@@ -79,19 +80,29 @@
             return speed;
         }
 
+        public DateTime GetDateTime()
+        {
+            return dateTime;
+        }
+
         private void ProcessMessage(string line)
         {
             var message = factory.CreateMessage(line);
 
-            if (message is ISpeedMessage)
+            if (message is IDateTimeMessage)
             {
-                speed = ((ISpeedMessage)message).Speed;
+                dateTime = ((IDateTimeMessage)message).DateTime;
             }
 
             if (message is ILocationMessage)
             {
                 latitude = ((ILocationMessage)message).Latitude;
                 longitude = ((ILocationMessage)message).Longitude;
+            }
+
+            if (message is ISpeedMessage)
+            {
+                speed = ((ISpeedMessage)message).Speed;
             }
         }
     }

@@ -186,6 +186,29 @@
             }
         }
 
+        private void ButtonQuit_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (serialPort.IsOpen)
+                {
+                    serialPort.Close();
+                }
+            }
+            catch (InvalidOperationException ex)
+            {
+                MessageBox.Show(
+                   ex.Message,
+                   "Error",
+                   MessageBoxButtons.OK,
+                   MessageBoxIcon.Exclamation,
+                   MessageBoxDefaultButton.Button1);
+            }
+            finally
+            {
+                Application.Exit();
+            }
+        }
 
         private void ButtonSend_Click(object sender, EventArgs e)
         {

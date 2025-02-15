@@ -4,9 +4,11 @@
     using System.Text;
     using System.Collections.Generic;
     using System.Linq;
+    using GNN.NMEAParser.Contracts;
     using GNN.NMEAParser.Factories;
     using GNN.NMEAParser.Messages;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using System.Globalization;
 
     /// <summary>
     /// Summary description for UnitTest1
@@ -72,6 +74,14 @@
             var rmc = factory.CreateMessage(message);
 
             Assert.IsNotNull(rmc);
+
+            Assert.IsInstanceOfType(rmc, typeof(IDateTimeMessage));
+            Assert.IsInstanceOfType(rmc, typeof(ILocationMessage));
+            Assert.IsInstanceOfType(rmc, typeof(ISpeedMessage));
+
+            var expectedDateTime = DateTime.ParseExact("13.05.22-20:35:22", "dd.MM.yy-HH:mm:ss", CultureInfo.InvariantCulture, DateTimeStyles.AssumeUniversal);
+            var dateTimeMessage = rmc as IDateTimeMessage;
+            Assert.AreEqual(expectedDateTime, dateTimeMessage.DateTime);
         }
 
         [TestMethod]

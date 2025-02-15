@@ -57,6 +57,7 @@
     <Compile Include="Contracts\ILocationMessage.cs" />
     <Compile Include="Contracts\IMessage.cs" />
     <Compile Include="Contracts\ISpeedMessage.cs" />
+    <Compile Include="Contracts\IDateTimeMessage.cs" />
     <Compile Include="Factories\MessageFactory.cs" />
     <Compile Include="Messages\RMC.cs" />
     <Compile Include="Messages\VTG.cs" />

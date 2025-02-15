@@ -137,6 +137,11 @@
             {
                 labelSpeed.Text = string.Format("{0:0.0}", NMEAParser.Instance.GetSpeed());
             }));
+
+            labelDateTime.BeginInvoke((Action)(() =>
+            {
+                labelDateTime.Text = string.Format("{0:dd.MM.yy HH:mm:ss}", NMEAParser.Instance.GetDateTime());
+            }));
         }
 
         private string ReadExistingData()
