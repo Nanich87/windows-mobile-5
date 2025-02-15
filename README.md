@@ -1,9 +1,11 @@
-# Windows Mobile 5.0
+# Software for Windows Mobile 5.0 Powered Devices
 
-## Serial Port Terminal
+## Applications
 
-![image](https://github.com/user-attachments/assets/26b0f6e4-38d9-4611-b782-a2145f406acf)
+### GPS Logger
 
-## GPS Logger
+### Serial Port Terminal
 
+## Libraries
 
+### NMEA Parser Library
