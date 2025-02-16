@@ -8,13 +8,18 @@
     using System.IO.Ports;
     using System.Drawing;
     using System.Linq;
+    using System.Runtime.InteropServices;
     using System.Text;
     using System.Windows.Forms;
     using GNN.NMEAParser;
+    using Microsoft.Win32;
 
     public partial class MainForm : Form
     {
         private SerialPort serialPort;
+
+        [DllImport("CoreDLL")]
+        public static extern void SystemIdleTimerReset();
 
         public MainForm()
         {
@@ -30,6 +35,23 @@
 
             menuItemStart.Enabled = true;
             menuItemStop.Enabled = false;
+        }
+
+        private void MainForm_Load(object sender, System.EventArgs e)
+        {
+            // Set the interval on our timer and start the
+            // timer. It will run for the duration of the
+            // program
+            var interval = ShortestTimeoutInterval();
+            resetTimer.Interval = interval;
+            resetTimer.Enabled = true;
+            resetTimer.Tick += ResetTimer_Tick;
+        }
+
+        private void MainForm_Closed(object sender, System.EventArgs e)
+        {
+            resetTimer.Enabled = false;
+            resetTimer.Tick -= ResetTimer_Tick;
         }
 
         private void MenuItemStart_Click(object sender, EventArgs e)
@@ -118,7 +140,7 @@
             }
         }
 
-        void SerialPort_DataReceived(object sender, SerialDataReceivedEventArgs e)
+        private void SerialPort_DataReceived(object sender, SerialDataReceivedEventArgs e)
         {
             var data = ReadExistingData();
             NMEAParser.Instance.Parse(data);
@@ -144,6 +166,11 @@
             }));
         }
 
+        private void ResetTimer_Tick(object sender, EventArgs e)
+        {
+            SystemIdleTimerReset();
+        }
+
         private string ReadExistingData()
         {
             string data = null;
@@ -157,6 +184,57 @@
             }
 
             return data;
+        }
+
+        // Look in the registry to see what the shortest timeout
+        // period is. Note that Zero is a special value with respect
+        // to timeouts. It indicates that a timeout will not occur.
+        // As long as SystemIdleTimeerReset is called on intervals
+        // that are shorter than the smallest non-zero timeout value
+        // then the device will not sleep from idleness. This does
+        // not prevent the device from sleeping due to the power
+        // button being pressed.
+        private int ShortestTimeoutInterval()
+        {
+            var retVal = 1000;
+            var key = Registry.LocalMachine.OpenSubKey(@"\SYSTEM\CurrentControlSet\Control\Power");
+            var oBatteryTimeout = key.GetValue("BattPowerOff");
+            var oACTimeOut = key.GetValue("ExtPowerOff");
+            var oScreenPowerOff = key.GetValue("ScreenPowerOff");
+
+            if (oBatteryTimeout is int)
+            {
+                var v = (int)oBatteryTimeout;
+                if (v > 0)
+                {
+                    retVal = Math.Min(retVal, v);
+                }
+            }
+
+            if (oACTimeOut is int)
+            {
+                var v = (int)oACTimeOut;
+                if (v > 0)
+                {
+                    retVal = Math.Min(retVal, v);
+                }
+            }
+
+            if (oScreenPowerOff is int)
+            {
+                var v = (int)oScreenPowerOff;
+                if (v > 0)
+                {
+                    retVal = Math.Min(retVal, v);
+                }
+            }
+
+            //Since the interval is in seconds and out timer
+            //operates in milliseconds the value needs to be multiplied
+            //by 1000 to get the appropriate millisecond value. I've
+            //multiplied by 900 instead so that I ensure that I call
+            //SystemIdleTimerReset before the timeout is reached.
+            return retVal * 900;
         }
     }
 }

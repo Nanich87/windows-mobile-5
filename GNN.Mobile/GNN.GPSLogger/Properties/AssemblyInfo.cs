@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("GNN.GPSLogger")]
 [assembly: AssemblyDescription("GPS Logger")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("GNNMobile")]
+[assembly: AssemblyCompany("GNNMobile.eu")]
 [assembly: AssemblyProduct("GNN.GPSLogger")]
 [assembly: AssemblyCopyright("Copyright © 2025")]
 [assembly: AssemblyTrademark("")]

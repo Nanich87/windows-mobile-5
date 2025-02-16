@@ -85,7 +85,7 @@
             // 
             // labelDataReceived
             // 
-            this.labelDataReceived.BackColor = System.Drawing.Color.Transparent;
+            this.labelDataReceived.BackColor = System.Drawing.Color.Black;
             this.labelDataReceived.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Bold);
             this.labelDataReceived.ForeColor = System.Drawing.Color.White;
             this.labelDataReceived.Location = new System.Drawing.Point(4, 4);

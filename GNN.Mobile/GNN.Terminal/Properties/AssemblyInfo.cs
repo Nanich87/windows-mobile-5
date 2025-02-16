@@ -6,9 +6,9 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("GNN.Terminal")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("Serial Port Terminal")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("GNNMobile.eu")]
 [assembly: AssemblyProduct("GNN.Terminal")]
 [assembly: AssemblyCopyright("Copyright © 2025")]
 [assembly: AssemblyTrademark("")]

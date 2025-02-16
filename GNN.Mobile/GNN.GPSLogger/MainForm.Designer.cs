@@ -40,6 +40,7 @@
             this.labelN = new System.Windows.Forms.Label();
             this.labelE = new System.Windows.Forms.Label();
             this.labelDateTime = new System.Windows.Forms.Label();
+            this.resetTimer = new System.Windows.Forms.Timer();
             this.SuspendLayout();
             // 
             // mainMenu1
@@ -144,7 +145,8 @@
             this.Name = "MainForm";
             this.Text = "GPS Logger";
             this.ResumeLayout(false);
-
+            this.Load += new System.EventHandler(MainForm_Load);
+            this.Closed += new System.EventHandler(MainForm_Closed);
         }
 
         #endregion
@@ -159,6 +161,7 @@
         private System.Windows.Forms.Label labelE;
         private System.Windows.Forms.MenuItem menuItemExit;
         private System.Windows.Forms.Label labelDateTime;
+        private System.Windows.Forms.Timer resetTimer;
     }
 }
 
