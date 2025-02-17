@@ -9,6 +9,7 @@
     using System.IO.Ports;
     using System.Text;
     using System.Windows.Forms;
+    using GNN.Common;
 
     public partial class DeviceForm : Form
     {
@@ -22,8 +23,19 @@
                 comboBoxPort.Items.Add(port);
             }
 
-            comboBoxPort.SelectedIndex = 0;
-            comboBoxBaudRate.SelectedIndex = 0;
+            var lastPortName = ConfigurationManager.AppSettings["portName"];
+            var lastPortIndex = Array.IndexOf(ports, lastPortName);
+            comboBoxPort.SelectedIndex = lastPortIndex != -1 ? lastPortIndex : 0;
+
+            var baudRates = new string[] { "2400", "4800", "9600", "19200", "28800", "38400", "57600", "76800", "115200" };
+            foreach (var baudRate in baudRates)
+            {
+                comboBoxBaudRate.Items.Add(baudRate);
+            }
+            
+            var lastBaudRate = ConfigurationManager.AppSettings["baudRate"];
+            var lastBaudRateIndex = Array.IndexOf(baudRates, lastBaudRate);
+            comboBoxBaudRate.SelectedIndex = lastBaudRateIndex != -1 ? lastBaudRateIndex : 0;
         }
 
         public string PortName { get; private set; }
@@ -38,6 +50,10 @@
         {
             PortName = comboBoxPort.SelectedItem.ToString();
             BaudRate = int.Parse(comboBoxBaudRate.SelectedItem.ToString());
+
+            ConfigurationManager.AppSettings["portName"] = PortName;
+            ConfigurationManager.AppSettings["baudRate"] = BaudRate.ToString();
+            ConfigurationManager.Save();
 
             DialogResult = DialogResult.Yes;
         }

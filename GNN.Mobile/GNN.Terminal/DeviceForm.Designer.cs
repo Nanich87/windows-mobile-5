@@ -73,15 +73,6 @@
             // comboBoxBaudRate
             // 
             this.comboBoxBaudRate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBoxBaudRate.Items.Add("2400");
-            this.comboBoxBaudRate.Items.Add("4800");
-            this.comboBoxBaudRate.Items.Add("9600");
-            this.comboBoxBaudRate.Items.Add("19200");
-            this.comboBoxBaudRate.Items.Add("28800");
-            this.comboBoxBaudRate.Items.Add("38400");
-            this.comboBoxBaudRate.Items.Add("57600");
-            this.comboBoxBaudRate.Items.Add("76800");
-            this.comboBoxBaudRate.Items.Add("115200");
             this.comboBoxBaudRate.Location = new System.Drawing.Point(92, 31);
             this.comboBoxBaudRate.Name = "comboBoxBaudRate";
             this.comboBoxBaudRate.Size = new System.Drawing.Size(145, 22);

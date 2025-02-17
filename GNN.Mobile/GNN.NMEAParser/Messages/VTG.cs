@@ -11,7 +11,7 @@
     {
         public const string Name = "VTG";
 
-        private const int Length = 10;
+        private const int SpeedIndex = 7;
 
         public VTG(double speed)
         {
@@ -23,16 +23,11 @@
         public static VTG Create(string message)
         {
             var fields = message.Split(',');
-            if (fields.Length == Length)
+
+            if (SpeedIndex < fields.Length && !string.IsNullOrEmpty(fields[SpeedIndex]))
             {
-                try
-                {
-                    var speed = double.Parse(fields[7], NumberStyles.AllowDecimalPoint, CultureInfo.InvariantCulture);
-                    return new VTG(speed);
-                }
-                catch (Exception)
-                {
-                }
+                var speed = double.Parse(fields[SpeedIndex], NumberStyles.AllowDecimalPoint, CultureInfo.InvariantCulture);
+                return new VTG(speed);
             }
 
             return null;
