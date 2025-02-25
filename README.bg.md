@@ -8,7 +8,7 @@
 
 ### GNN.Terminal
 
-![GNN.Terminal](https://github.com/Nanich87/windows-mobile-5/blob/main/images/GNN.Terminal-MainForm.PNG) ![GNN.Terminal](https://github.com/Nanich87/windows-mobile-5/blob/main/images/GNN.Terminal-DeviceForm.PNG)
+![GNN.Terminal](https://github.com/Nanich87/windows-mobile-5/blob/main/screenshots/GNN.Terminal-MainForm.PNG) ![GNN.Terminal](https://github.com/Nanich87/windows-mobile-5/blob/main/screenshots/GNN.Terminal-DeviceForm.PNG)
 
 ## Библиотеки
 
