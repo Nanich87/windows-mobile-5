@@ -25,9 +25,12 @@
         {
             InitializeComponent();
 
+            var portName = ConfigurationManager.AppSettings["portName"];
+            var baudRate = int.Parse(ConfigurationManager.AppSettings["baudRate"]);
+
             serialPort = new SerialPort();
-            serialPort.PortName = "COM2";
-            serialPort.BaudRate = 57600;
+            serialPort.PortName = portName;
+            serialPort.BaudRate = baudRate;
             serialPort.Parity = Parity.None;
             serialPort.DataBits = 8;
             serialPort.StopBits = StopBits.One;
