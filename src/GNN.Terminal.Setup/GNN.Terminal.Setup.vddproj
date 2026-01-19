@@ -57,6 +57,12 @@
         "Entry"
         {
         "MsmKey" = "8:_2243431A0B1A1F10CFFFF682A3E1284B"
+        "OwnerKey" = "8:_BC78FC4D0CD1D42F9F967254F8F58B37"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_2243431A0B1A1F10CFFFF682A3E1284B"
         "OwnerKey" = "8:_7406CA3922575B9DB29D3ADB28918959"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -82,6 +88,12 @@
         {
         "MsmKey" = "8:_46750BC0365AF3E6474B13E9B86A7666"
         "OwnerKey" = "8:_135FF8B606C1E5936EE7F6CB9D54460F"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_46750BC0365AF3E6474B13E9B86A7666"
+        "OwnerKey" = "8:_BC78FC4D0CD1D42F9F967254F8F58B37"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -116,8 +128,20 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_BC78FC4D0CD1D42F9F967254F8F58B37"
+        "OwnerKey" = "8:_D548C20AE31245CBBC785A108D83048B"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_C1631C69AA098818C00C0F9F5BA77421"
         "OwnerKey" = "8:_D548C20AE31245CBBC785A108D83048B"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_C1631C69AA098818C00C0F9F5BA77421"
+        "OwnerKey" = "8:_BC78FC4D0CD1D42F9F967254F8F58B37"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -166,6 +190,12 @@
         {
         "MsmKey" = "8:_C1631C69AA098818C00C0F9F5BA77421"
         "OwnerKey" = "8:_050E7EC45CE79B5C22B3202572D9FE54"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_D0F2AC357370490A921ADBFF32A4D191"
+        "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -430,6 +460,34 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
+            "{E4F2F62A-3940-4BF5-A031-F7FA98CAAFFA}:_BC78FC4D0CD1D42F9F967254F8F58B37"
+            {
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:GNN.Common, Version=1.0.9515.20262, Culture=neutral"
+                "ScatterAssemblies"
+                {
+                    "_BC78FC4D0CD1D42F9F967254F8F58B37"
+                    {
+                    "Name" = "8:GNN.Common.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:GNN.Common.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_B28249DD65BA4267A3FDA823958D8156"
+            "Condition" = "8:"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "Register" = "3:0"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
             "{E4F2F62A-3940-4BF5-A031-F7FA98CAAFFA}:_C1631C69AA098818C00C0F9F5BA77421"
             {
             "AssemblyIsInGAC" = "11:FALSE"
@@ -456,6 +514,24 @@
             "Register" = "3:0"
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{BA458234-9B71-4F46-8107-E91156377184}:_D0F2AC357370490A921ADBFF32A4D191"
+            {
+            "SourcePath" = "8:..\\GNN.Terminal\\GNN.Terminal.exe.config"
+            "TargetName" = "8:GNN.Terminal.exe.config"
+            "Tag" = "8:"
+            "Folder" = "8:_B28249DD65BA4267A3FDA823958D8156"
+            "Condition" = "8:"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "Register" = "3:0"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
         }

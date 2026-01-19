@@ -30,6 +30,11 @@
                         return RMC.Create(line);
                     }
 
+                case GGA.Name:
+                    {
+                        return GGA.Create(line);
+                    }
+
                 default:
                     {
                         return null;

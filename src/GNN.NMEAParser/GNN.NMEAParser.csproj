@@ -54,11 +54,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Contracts\IElevationMessage.cs" />
     <Compile Include="Contracts\ILocationMessage.cs" />
     <Compile Include="Contracts\IMessage.cs" />
     <Compile Include="Contracts\ISpeedMessage.cs" />
     <Compile Include="Contracts\IDateTimeMessage.cs" />
     <Compile Include="Factories\MessageFactory.cs" />
+    <Compile Include="Messages\GGA.cs" />
     <Compile Include="Messages\RMC.cs" />
     <Compile Include="Messages\VTG.cs" />
     <Compile Include="NMEAParser.cs" />

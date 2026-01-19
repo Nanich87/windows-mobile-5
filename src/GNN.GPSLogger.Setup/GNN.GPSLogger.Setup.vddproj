@@ -14,7 +14,25 @@
     {
         "Entry"
         {
+        "MsmKey" = "8:_16095C0D60B545B780E514A63268CA6F"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_31507F83C2EF5D68129B587E0FF9744C"
+        "OwnerKey" = "8:_9EDEAD42325A4AEA998DC3CF966E8F2B"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_41E8544FB62CFA8EF01E2D6EFE78FE1A"
+        "OwnerKey" = "8:_9EDEAD42325A4AEA998DC3CF966E8F2B"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_5951F76B95BFC2CFEE65E0B54514112B"
         "OwnerKey" = "8:_9EDEAD42325A4AEA998DC3CF966E8F2B"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -22,6 +40,18 @@
         {
         "MsmKey" = "8:_6446F49A6F95CFC9CE8BF614A3935F67"
         "OwnerKey" = "8:_9EDEAD42325A4AEA998DC3CF966E8F2B"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_6446F49A6F95CFC9CE8BF614A3935F67"
+        "OwnerKey" = "8:_5951F76B95BFC2CFEE65E0B54514112B"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_6446F49A6F95CFC9CE8BF614A3935F67"
+        "OwnerKey" = "8:_41E8544FB62CFA8EF01E2D6EFE78FE1A"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -123,6 +153,12 @@
         "Entry"
         {
         "MsmKey" = "8:_AC0A805803BA710B240E4AF3DE7F44E3"
+        "OwnerKey" = "8:_41E8544FB62CFA8EF01E2D6EFE78FE1A"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_AC0A805803BA710B240E4AF3DE7F44E3"
         "OwnerKey" = "8:_6B03A66CED6910BD9F6A72481624A034"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -142,6 +178,12 @@
         {
         "MsmKey" = "8:_B02393F180EA8FB681508934AF06FA15"
         "OwnerKey" = "8:_91CC38DF78BC1A505F3EA7E91008EB2E"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_B02393F180EA8FB681508934AF06FA15"
+        "OwnerKey" = "8:_41E8544FB62CFA8EF01E2D6EFE78FE1A"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -206,6 +248,24 @@
     {
         "File"
         {
+            "{BA458234-9B71-4F46-8107-E91156377184}:_16095C0D60B545B780E514A63268CA6F"
+            {
+            "SourcePath" = "8:..\\GNN.GPSLogger\\GNN.GPSLogger.exe.config"
+            "TargetName" = "8:GNN.GPSLogger.exe.config"
+            "Tag" = "8:"
+            "Folder" = "8:_3530FADA5D014221963C7A117E5F07B4"
+            "Condition" = "8:"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "Register" = "3:0"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{E4F2F62A-3940-4BF5-A031-F7FA98CAAFFA}:_31507F83C2EF5D68129B587E0FF9744C"
             {
             "AssemblyIsInGAC" = "11:FALSE"
@@ -219,6 +279,62 @@
                     }
                 }
             "SourcePath" = "8:System.Data.DataSetExtensions.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_3530FADA5D014221963C7A117E5F07B4"
+            "Condition" = "8:"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "Register" = "3:0"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{E4F2F62A-3940-4BF5-A031-F7FA98CAAFFA}:_41E8544FB62CFA8EF01E2D6EFE78FE1A"
+            {
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:GNN.Common, Version=1.0.9515.20262, Culture=neutral"
+                "ScatterAssemblies"
+                {
+                    "_41E8544FB62CFA8EF01E2D6EFE78FE1A"
+                    {
+                    "Name" = "8:GNN.Common.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:GNN.Common.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_3530FADA5D014221963C7A117E5F07B4"
+            "Condition" = "8:"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "Register" = "3:0"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{E4F2F62A-3940-4BF5-A031-F7FA98CAAFFA}:_5951F76B95BFC2CFEE65E0B54514112B"
+            {
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:GNN.NMEAParser, Version=1.0.9515.18359, Culture=neutral"
+                "ScatterAssemblies"
+                {
+                    "_5951F76B95BFC2CFEE65E0B54514112B"
+                    {
+                    "Name" = "8:GNN.NMEAParser.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:GNN.NMEAParser.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_3530FADA5D014221963C7A117E5F07B4"
@@ -494,7 +610,7 @@
         {
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:GNN.GPSLogger.Setup"
-        "Manufacturer" = "8:Default Company Name"
+        "Manufacturer" = "8:GNNMobile.eu"
         "OSVersionMin" = "8:4.0"
         "OSVersionMax" = "8:6.99"
         "NoUninstall" = "11:FALSE"

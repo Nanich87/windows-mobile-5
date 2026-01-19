@@ -32,6 +32,7 @@
             this.mainMenu1 = new System.Windows.Forms.MainMenu();
             this.menuItemStart = new System.Windows.Forms.MenuItem();
             this.menuItemStop = new System.Windows.Forms.MenuItem();
+            this.menuItem1 = new System.Windows.Forms.MenuItem();
             this.menuItemExit = new System.Windows.Forms.MenuItem();
             this.labelSpeed = new System.Windows.Forms.Label();
             this.labelSpeedometer = new System.Windows.Forms.Label();
@@ -41,12 +42,16 @@
             this.labelE = new System.Windows.Forms.Label();
             this.labelDateTime = new System.Windows.Forms.Label();
             this.resetTimer = new System.Windows.Forms.Timer();
+            this.labelSpeedUnits = new System.Windows.Forms.Label();
+            this.labelH = new System.Windows.Forms.Label();
+            this.labelAltitude = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // mainMenu1
             // 
             this.mainMenu1.MenuItems.Add(this.menuItemStart);
             this.mainMenu1.MenuItems.Add(this.menuItemStop);
+            this.mainMenu1.MenuItems.Add(this.menuItem1);
             this.mainMenu1.MenuItems.Add(this.menuItemExit);
             // 
             // menuItemStart
@@ -58,6 +63,11 @@
             // 
             this.menuItemStop.Text = "Stop";
             this.menuItemStop.Click += new System.EventHandler(this.MenuItemStop_Click);
+            // 
+            // menuItem1
+            // 
+            this.menuItem1.Text = "Export";
+            this.menuItem1.Click += new System.EventHandler(this.MenuItemExport_Click);
             // 
             // menuItemExit
             // 
@@ -128,12 +138,39 @@
             this.labelDateTime.Text = "---";
             this.labelDateTime.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
+            // labelSpeedUnits
+            // 
+            this.labelSpeedUnits.Location = new System.Drawing.Point(202, 74);
+            this.labelSpeedUnits.Name = "labelSpeedUnits";
+            this.labelSpeedUnits.Size = new System.Drawing.Size(38, 20);
+            this.labelSpeedUnits.Text = "km/h";
+            // 
+            // labelH
+            // 
+            this.labelH.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
+            this.labelH.Location = new System.Drawing.Point(57, 144);
+            this.labelH.Name = "labelH";
+            this.labelH.Size = new System.Drawing.Size(40, 20);
+            this.labelH.Text = "H:";
+            // 
+            // labelAltitude
+            // 
+            this.labelAltitude.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular);
+            this.labelAltitude.Location = new System.Drawing.Point(103, 144);
+            this.labelAltitude.Name = "labelAltitude";
+            this.labelAltitude.Size = new System.Drawing.Size(125, 20);
+            this.labelAltitude.Text = "0000.000";
+            this.labelAltitude.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(240, 268);
+            this.Controls.Add(this.labelAltitude);
+            this.Controls.Add(this.labelH);
+            this.Controls.Add(this.labelSpeedUnits);
             this.Controls.Add(this.labelDateTime);
             this.Controls.Add(this.labelE);
             this.Controls.Add(this.labelN);
@@ -144,9 +181,10 @@
             this.Menu = this.mainMenu1;
             this.Name = "MainForm";
             this.Text = "GPS Logger";
+            this.Load += new System.EventHandler(this.MainForm_Load);
+            this.Closed += new System.EventHandler(this.MainForm_Closed);
             this.ResumeLayout(false);
-            this.Load += new System.EventHandler(MainForm_Load);
-            this.Closed += new System.EventHandler(MainForm_Closed);
+
         }
 
         #endregion
@@ -162,6 +200,10 @@
         private System.Windows.Forms.MenuItem menuItemExit;
         private System.Windows.Forms.Label labelDateTime;
         private System.Windows.Forms.Timer resetTimer;
+        private System.Windows.Forms.Label labelSpeedUnits;
+        private System.Windows.Forms.MenuItem menuItem1;
+        private System.Windows.Forms.Label labelH;
+        private System.Windows.Forms.Label labelAltitude;
     }
 }
 

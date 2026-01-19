@@ -11,6 +11,7 @@
     using System.Runtime.InteropServices;
     using System.Text;
     using System.Windows.Forms;
+    using GNN.Common;
     using GNN.NMEAParser;
     using Microsoft.Win32;
 
@@ -18,12 +19,19 @@
     {
         private SerialPort serialPort;
 
+        private FileStream output;
+
+        private string fileName;
+
         [DllImport("CoreDLL")]
         public static extern void SystemIdleTimerReset();
 
         public MainForm()
         {
             InitializeComponent();
+
+            var configFile = string.Format("{0}.config", System.Reflection.Assembly.GetExecutingAssembly().GetName().CodeBase);
+            ConfigurationManager.Init(configFile);
 
             var portName = ConfigurationManager.AppSettings["portName"];
             var baudRate = int.Parse(ConfigurationManager.AppSettings["baudRate"]);
@@ -68,6 +76,9 @@
 
             try
             {
+                fileName = string.Format("dd-MM-yyyy-HH-mm-ss.log", DateTime.Now);
+                output = File.Open(fileName, FileMode.Append, FileAccess.Write);
+
                 serialPort.Open();
                 success = true;
             }
@@ -119,6 +130,11 @@
             }
         }
 
+        private void MenuItemExport_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void MenuItemExit_Click(object sender, EventArgs e)
         {
             try
@@ -158,6 +174,11 @@
                 labelLongitude.Text = string.Format("{0:0.00000000}", NMEAParser.Instance.GetLongitude());
             }));
 
+            labelAltitude.BeginInvoke((Action)(() =>
+            {
+                labelAltitude.Text = string.Format("{0:0.000}", NMEAParser.Instance.GetAltitude());
+            }));
+
             labelSpeed.BeginInvoke((Action)(() =>
             {
                 labelSpeed.Text = string.Format("{0:0.0}", NMEAParser.Instance.GetSpeed());
@@ -165,7 +186,7 @@
 
             labelDateTime.BeginInvoke((Action)(() =>
             {
-                labelDateTime.Text = string.Format("{0:dd.MM.yy HH:mm:ss}", NMEAParser.Instance.GetDateTime());
+                labelDateTime.Text = string.Format("{0:dd.MM.yyyy HH:mm:ss}", NMEAParser.Instance.GetDateTime());
             }));
         }
 
@@ -187,6 +208,21 @@
             }
 
             return data;
+        }
+
+        private void WriteToFile(string data)
+        {
+            try
+            {
+                if (output != null)
+                {
+                    var buffer = Encoding.Default.GetBytes(data);
+                    output.Write(buffer, 0, buffer.Length);
+                }
+            }
+            catch (Exception ex)
+            {
+            }
         }
 
         // Look in the registry to see what the shortest timeout

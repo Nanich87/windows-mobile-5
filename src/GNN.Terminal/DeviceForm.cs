@@ -23,6 +23,9 @@
                 comboBoxPort.Items.Add(port);
             }
 
+            var configFile = string.Format("{0}.config", System.Reflection.Assembly.GetExecutingAssembly().GetName().CodeBase);
+            ConfigurationManager.Init(configFile);
+
             var lastPortName = ConfigurationManager.AppSettings["portName"];
             var lastPortIndex = Array.IndexOf(ports, lastPortName);
             comboBoxPort.SelectedIndex = lastPortIndex != -1 ? lastPortIndex : 0;

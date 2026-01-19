@@ -19,6 +19,7 @@
         private DateTime dateTime;
         private double latitude;
         private double longitude;
+        private double altitude;
         private double speed;
 
         private NMEAParser()
@@ -75,6 +76,11 @@
             return longitude;
         }
 
+        public double GetAltitude()
+        {
+            return altitude;
+        }
+
         public double GetSpeed()
         {
             return speed;
@@ -96,8 +102,22 @@
 
             if (message is ILocationMessage)
             {
-                latitude = ((ILocationMessage)message).Latitude;
-                longitude = ((ILocationMessage)message).Longitude;
+                var lat = ((ILocationMessage)message).Latitude;
+                if (!double.IsNaN(lat))
+                {
+                    latitude = lat;
+                }
+
+                var lon = ((ILocationMessage)message).Longitude;
+                if (!double.IsNaN(lon))
+                {
+                    longitude = lon;
+                }
+            }
+
+            if(message is IElevationMessage)
+            {
+                altitude = ((IElevationMessage)message).Altitude;
             }
 
             if (message is ISpeedMessage)

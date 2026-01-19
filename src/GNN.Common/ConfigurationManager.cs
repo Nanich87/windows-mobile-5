@@ -14,7 +14,11 @@
 
         static ConfigurationManager()
         {
-            ConfigurationManager.configFile = string.Format("{0}.config", System.Reflection.Assembly.GetCallingAssembly().GetName().CodeBase);
+        }
+
+        public static void Init(string configFile)
+        {
+            ConfigurationManager.configFile = configFile;
 
             if (!File.Exists(ConfigurationManager.configFile))
             {

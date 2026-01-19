@@ -80,6 +80,10 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\GNN.Common\GNN.Common.csproj">
+      <Project>{9838FB65-4425-4520-ABB9-321461A82AA2}</Project>
+      <Name>GNN.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\GNN.NMEAParser\GNN.NMEAParser.csproj">
       <Project>{63B5515A-815D-460D-B6B3-DC352EA14F98}</Project>
       <Name>GNN.NMEAParser</Name>
