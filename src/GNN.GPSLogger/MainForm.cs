@@ -21,8 +21,6 @@
 
         private FileStream output;
 
-        private string fileName;
-
         [DllImport("CoreDLL")]
         public static extern void SystemIdleTimerReset();
 
@@ -30,8 +28,8 @@
         {
             InitializeComponent();
 
-            var configFile = string.Format("{0}.config", System.Reflection.Assembly.GetExecutingAssembly().GetName().CodeBase);
-            ConfigurationManager.Init(configFile);
+            var configFilePath = string.Format("{0}.config", System.Reflection.Assembly.GetExecutingAssembly().GetName().CodeBase);
+            ConfigurationManager.Init(configFilePath);
 
             var portName = ConfigurationManager.AppSettings["portName"];
             var baudRate = int.Parse(ConfigurationManager.AppSettings["baudRate"]);
@@ -65,6 +63,15 @@
             resetTimer.Tick -= ResetTimer_Tick;
         }
 
+        private void MenuItemFile_Click(object sender, EventArgs e)
+        {
+            var saveFileDialog = new SaveFileDialog();
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                output = File.Open(saveFileDialog.FileName, FileMode.Append, FileAccess.Write);
+            }
+        }
+
         private void MenuItemStart_Click(object sender, EventArgs e)
         {
             if (serialPort.IsOpen)
@@ -76,9 +83,6 @@
 
             try
             {
-                fileName = string.Format("dd-MM-yyyy-HH-mm-ss.log", DateTime.Now);
-                output = File.Open(fileName, FileMode.Append, FileAccess.Write);
-
                 serialPort.Open();
                 success = true;
             }

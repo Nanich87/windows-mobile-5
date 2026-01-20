@@ -45,10 +45,12 @@
             this.labelSpeedUnits = new System.Windows.Forms.Label();
             this.labelH = new System.Windows.Forms.Label();
             this.labelAltitude = new System.Windows.Forms.Label();
+            this.menuItem2 = new System.Windows.Forms.MenuItem();
             this.SuspendLayout();
             // 
             // mainMenu1
             // 
+            this.mainMenu1.MenuItems.Add(this.menuItem2);
             this.mainMenu1.MenuItems.Add(this.menuItemStart);
             this.mainMenu1.MenuItems.Add(this.menuItemStop);
             this.mainMenu1.MenuItems.Add(this.menuItem1);
@@ -162,6 +164,11 @@
             this.labelAltitude.Text = "0000.000";
             this.labelAltitude.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
+            // menuItem2
+            // 
+            this.menuItem2.Text = "File";
+            this.menuItem2.Click += new System.EventHandler(this.MenuItemFile_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -204,6 +211,7 @@
         private System.Windows.Forms.MenuItem menuItem1;
         private System.Windows.Forms.Label labelH;
         private System.Windows.Forms.Label labelAltitude;
+        private System.Windows.Forms.MenuItem menuItem2;
     }
 }
 

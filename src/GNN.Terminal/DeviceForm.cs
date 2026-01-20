@@ -23,8 +23,8 @@
                 comboBoxPort.Items.Add(port);
             }
 
-            var configFile = string.Format("{0}.config", System.Reflection.Assembly.GetExecutingAssembly().GetName().CodeBase);
-            ConfigurationManager.Init(configFile);
+            var configFilePath = string.Format("{0}.config", System.Reflection.Assembly.GetExecutingAssembly().GetName().CodeBase);
+            ConfigurationManager.Init(configFilePath);
 
             var lastPortName = ConfigurationManager.AppSettings["portName"];
             var lastPortIndex = Array.IndexOf(ports, lastPortName);
