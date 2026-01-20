@@ -168,19 +168,25 @@
             var data = ReadExistingData();
             NMEAParser.Instance.Parse(data);
 
+            var latitude = string.Format("{0:0.00000000}", NMEAParser.Instance.GetLatitude());
+
             labelLatitude.BeginInvoke((Action)(() =>
             {
-                labelLatitude.Text = string.Format("{0:0.00000000}", NMEAParser.Instance.GetLatitude());
+                labelLatitude.Text = latitude;
             }));
+
+            var longitude = string.Format("{0:0.00000000}", NMEAParser.Instance.GetLongitude());
 
             labelLongitude.BeginInvoke((Action)(() =>
             {
-                labelLongitude.Text = string.Format("{0:0.00000000}", NMEAParser.Instance.GetLongitude());
+                labelLongitude.Text = longitude;
             }));
+
+            var altitude = string.Format("{0:0.000}", NMEAParser.Instance.GetAltitude());
 
             labelAltitude.BeginInvoke((Action)(() =>
             {
-                labelAltitude.Text = string.Format("{0:0.000}", NMEAParser.Instance.GetAltitude());
+                labelAltitude.Text = altitude;
             }));
 
             labelSpeed.BeginInvoke((Action)(() =>
@@ -188,10 +194,15 @@
                 labelSpeed.Text = string.Format("{0:0.0}", NMEAParser.Instance.GetSpeed());
             }));
 
+            var dateTime = string.Format("{0:dd.MM.yyyy HH:mm:ss}", NMEAParser.Instance.GetDateTime());
+
             labelDateTime.BeginInvoke((Action)(() =>
             {
-                labelDateTime.Text = string.Format("{0:dd.MM.yyyy HH:mm:ss}", NMEAParser.Instance.GetDateTime());
+                labelDateTime.Text = dateTime;
             }));
+
+            var point = string.Format("{0} {1} {2} {3}{4}", latitude, longitude, altitude, dateTime, Environment.NewLine);
+            WriteToFile(point);
         }
 
         private void ResetTimer_Tick(object sender, EventArgs e)
